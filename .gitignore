@@ -1,0 +1,5 @@
+# vscode
+.vscode
+
+# till credentials fixed (temp fix)
+docker-compose.yaml
