@@ -1,8 +1,8 @@
 body {
   background-image: linear-gradient(
     83.2deg,
-    rgba(150, 93, 233, 1) 10.8%,
-    rgba(99, 88, 238, 1) 94.3%
+    rgb(48, 59, 65) 10.8%,
+    rgb(220, 238, 88) 94.3%
   );
   color: #fff;
 }
@@ -51,8 +51,8 @@ body {
   cursor: pointer;
   background-image: linear-gradient(
     102.4deg,
-    rgba(253, 189, 85, 1) 7.8%,
-    rgba(249, 131, 255, 1) 100.3%
+    rgb(190, 190, 190) 7.8%,
+    rgb(99, 73, 73) 100.3%
   );
   color: #fff;
 }

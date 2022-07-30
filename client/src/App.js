@@ -3,19 +3,17 @@ import './App.css';
 
 function App() {
   const [activities, setActivities] = useState([]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(
-        `${process.env.REACT_APP_API_URL}/activities`
-      );
+      const result = await fetch(`${process.env.REACT_APP_API_URL}/activities`);
       const data = await result.json();
       setActivities(data);
     };
     fetchData();
   }, []);
 
-  const addActivity = async event => {
+  const addActivity = async (event) => {
     event.preventDefault();
 
     const newActivity = {
@@ -37,7 +35,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>Productivity Tracker</h1>
+        <h1>Activity Tracker</h1>
         <form onSubmit={addActivity}>
           <div>
             <label htmlFor="activity">Activity:</label>
@@ -60,7 +58,7 @@ function App() {
 
         {activities && activities.length > 0 ? (
           <ol>
-            {activities.map(activity => (
+            {activities.map((activity) => (
               <li key={activity._id}>
                 {activity.name} - {activity.time}
               </li>
