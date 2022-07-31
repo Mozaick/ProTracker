@@ -2,4 +2,12 @@
 .vscode
 
 # till credentials fixed (temp fix)
-docker-compose.yaml
+# docker-compose.yaml
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
