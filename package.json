@@ -1,0 +1,21 @@
+{
+  "name": "protracker",
+  "version": "1.0.0",
+  "description": "activity tracker web application",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mozaick/protracker.git"
+  },
+  "author": "Mozes Elbarbary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mozaick/protracker/issues"
+  },
+  "homepage": "https://github.com/Mozaick/protracker#readme",
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}
