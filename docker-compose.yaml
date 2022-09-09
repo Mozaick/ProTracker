@@ -13,8 +13,6 @@ services:
       - /app/node_modules
   server:
     build: ./server
-    environment:
-      - MONGODB_URI=mongodb+srv://process.env.MONGO_INITDB_ROOT_USERNAME:process.env.MONGO_INITDB_ROOT_PASSWORD@cluster0.o2eet.mongodb.net/actions
     ports:
       - '7000:7000'
     depends_on:
@@ -32,9 +30,9 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - '/dbdata:/data/db'
+      - '$HOME/dockerdbcontainer:/data/db'
 volumes:
-  dbdata:
+  protrackerDB:
 
 
 
