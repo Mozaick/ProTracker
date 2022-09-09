@@ -17,7 +17,7 @@ const getActivities = async (req, res) => {
  * It creates a new activity and saves it to the database.
  */
 const addActivity = async (req, res) => {
-  const activity = new Activities(req.body);
+  const activity = new Activities();
 
   try {
     const newActivity = await activity.save(req.body);
