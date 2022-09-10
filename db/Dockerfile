@@ -1,5 +1,5 @@
 # Specifiy a version to use
-FROM mvertes/alpine-mongo
+FROM mongo:latest
 # Set the required environment variables
 # ENV POSTGRES_PASSWORD=password
 # Copy everything from the sql folder into docker entrypoint
