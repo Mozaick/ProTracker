@@ -1,13 +1,10 @@
-body {
-  background-image: linear-gradient(
+.app {
+  background-color: linear-gradient(
     83.2deg,
     rgb(48, 59, 65) 10.8%,
     rgb(220, 238, 88) 94.3%
   );
-  color: #fff;
-}
-
-.app {
+  color: #123;
   margin: 5% 10%;
 }
 
@@ -19,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .app-header form div {
@@ -34,7 +32,7 @@ body {
   border-bottom: 2px solid #ccc;
   width: 200px;
   background: transparent;
-  color: #fff;
+  color: #123;
 }
 
 .app-header form input:focus {
@@ -49,10 +47,10 @@ body {
   border-radius: 3px;
   width: 200px;
   cursor: pointer;
-  background-image: linear-gradient(
+  background-color: linear-gradient(
     102.4deg,
     rgb(190, 190, 190) 7.8%,
     rgb(99, 73, 73) 100.3%
   );
-  color: #fff;
+  color: #123;
 }
