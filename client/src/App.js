@@ -6,12 +6,14 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(`${process.env.REACT_APP_API_URL}/activities`);
-      const data = await result.json();
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/activities`
+      );
+      const data = await response.json();
       setActivities(data);
     };
     fetchData();
-  }, []);
+  }, [activities.length]);
 
   const addActivity = async (event) => {
     event.preventDefault();
@@ -28,10 +30,26 @@ function App() {
       },
       body: JSON.stringify(newActivity),
     });
-    event.target.activity.value = ''; // sets input empty after clicking submit
-    event.target.time.value = ''; // sets input empty after clicking submit
-    window.location.reload(); // reloads the window after sending request
+    event.target.activity.value = ''; 
+    event.target.time.value = ''; 
+    window.location.reload();
   };
+
+  const deleteActivity = async (activityId) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/activity/${activityId}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+    const data = await response.json();
+
+    setActivities(data);
+  };
+
   return (
     <div className="app">
       <header className="app-header">
@@ -53,17 +71,23 @@ function App() {
           <button type="submit">Add</button>
         </form>
       </header>
-      <main className="app-main">
+      <main>
         <h2>Today</h2>
 
         {activities && activities.length > 0 ? (
-          <ol>
+          <div>
             {activities.map((activity) => (
-              <li key={activity._id}>
-                {activity.name} - {activity.time}
-              </li>
+              <p key={activity._id}>
+                {activity.name} - {activity.time}{' '}
+                <span
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => deleteActivity(activity._id)}
+                >
+                  - 🗑
+                </span>
+              </p>
             ))}
-          </ol>
+          </div>
         ) : (
           <p>No activities yet</p>
         )}
