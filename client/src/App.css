@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .app-header form div {
@@ -26,20 +25,20 @@
 }
 
 .app-header form input {
-  margin: 0 10px;
-  padding: 5px;
+  display: block;
   border: none;
   border-bottom: 2px solid #ccc;
   width: 200px;
   background: transparent;
   color: #123;
+  font-weight: 900;
+  margin-top: 10px;
 }
 
 .app-header form input:focus {
   outline: none;
   border-bottom: 2px solid #5800ff;
 }
-
 .app-header form button {
   margin: 10px;
   padding: 5px;
@@ -53,4 +52,9 @@
     rgb(99, 73, 73) 100.3%
   );
   color: #123;
+}
+.app-header form button:hover {
+  background-color:  #5800ff;
+  transition: 0.1s;
+  color: white;
 }
