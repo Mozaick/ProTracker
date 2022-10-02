@@ -10,5 +10,5 @@ RUN ["npm", "install"]
 # expose a port
 EXPOSE 7000
 # run this command at entrypoint/on start
-ENTRYPOINT ["npm", "run", "start:dev"]
+ENTRYPOINT ["npm", "run", "dev"]
 
