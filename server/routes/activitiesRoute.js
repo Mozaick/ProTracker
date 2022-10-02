@@ -3,6 +3,7 @@ const express = require("express");
 const {
   getActivities,
   addActivity,
+  deleteActivity
 } = require("../controllers/activitiesController");
 
 const router = express.Router();
@@ -11,5 +12,7 @@ const router = express.Router();
 router.get("/activities", getActivities);
 /* Creating a route for the post request. */
 router.post("/activity", addActivity);
+/* Creating a route for the delete request. */
+router.delete("/activity/:_id", deleteActivity);
 
 module.exports = router;

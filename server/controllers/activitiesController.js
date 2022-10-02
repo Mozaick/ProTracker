@@ -1,3 +1,4 @@
+const ObjectId = require('mongodb').ObjectId;
 const Activities = require('../models/activitiesModel');
 
 /**
@@ -27,7 +28,18 @@ const addActivity = async (req, res) => {
   }
 };
 
+const deleteActivity = async (req, res) => {
+  try {
+    const { _id } = req.params;
+    const deleteActivity = await Activities.deleteOne({ _id: ObjectId(_id) });
+    res.status(200).json({ message: 'data deleted', data: deleteActivity });
+  } catch (err) {
+    res.status(400).json({message: err.message})
+  }
+};
+
 module.exports = {
   getActivities,
   addActivity,
+  deleteActivity,
 };
